@@ -2,8 +2,22 @@
 def tictactoe()
 	letters = ["X","O"]
 	temp_board = []
+	counter_x = 0
+	counter_y = 0
+
+	#add counter for X and 0
 	for i in (0..9)
-		temp_board << letters.sample
+		letter = letters.sample
+
+		if letter == "X" && counter_x < 6
+			temp_board << letter
+			counter_x =+ 1
+		elsif counter_y < 6
+			temp_board << letter
+			counter_y =+ 1
+		else
+			temp_board << "X"
+		end
 	end
 	board = Array.new(3) {
 		temp_board.shift(3)
@@ -44,11 +58,11 @@ roster = [ 	["Number", "Name", "Position", "Points per game"],
 			[ 22, "MK DiBoux", "Small Forward", [11, 0, 23, 17, 0]] ]
 
 
-p convert_roster_format(roster)
+#p convert_roster_format(roster)
 
 
 
-#generate_boards(10) #genarating tic toe board
+generate_boards(10) #genarating tic toe board
 
 
 
