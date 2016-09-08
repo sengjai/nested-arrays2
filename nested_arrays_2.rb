@@ -24,31 +24,24 @@ end
 
 def convert_roster_format(array)
 
-	#hash_board = Hash.new 
 	board = []
-	hash = Hash.new(5)
-
 	for row in 0..4
+		hash = Hash.new() #every loop create a new hash
 		for col in 0..3
-			hash[array[0][col]] = array[row+1][col]
-			board << hash
+			hash[array[0][col]] = array[row+1][col]	
 		end
-
+		board << hash
 	end
-
 	return board
-	#Create an Empty Hash Table
-
-
 end
 
 # Objective 3: Data table
 roster = [ 	["Number", "Name", "Position", "Points per game"],
-				[ 12, "Joe Schmo", "Center", [14, 32 ,7, 0, 23]],
-				[ 9, "Ms. Buckets", "Point Guard", [19, 0, 11, 22, 0]],
-				[ 31, "Harvey Kay", "Shooting Guard", [0, 30, 16, 0, 25]],
-				[ 18, "Sally Talls", "Power Forward", [18, 29, 26, 31, 19]],
-				[ 22, "MK DiBoux", "Small Forward", [11, 0, 23, 17, 0]] ]
+			[ 12, "Joe Schmo", "Center", [14, 32 ,7, 0, 23]],
+			[ 9, "Ms. Buckets", "Point Guard", [19, 0, 11, 22, 0]],
+			[ 31, "Harvey Kay", "Shooting Guard", [0, 30, 16, 0, 25]],
+			[ 18, "Sally Talls", "Power Forward", [18, 29, 26, 31, 19]],
+			[ 22, "MK DiBoux", "Small Forward", [11, 0, 23, 17, 0]] ]
 
 
 p convert_roster_format(roster)
